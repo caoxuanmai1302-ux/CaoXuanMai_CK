@@ -1,0 +1,27 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- selected -->
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp"/>
+            <solid android:color="#10B981"/>
+            <stroke android:width="2dp" android:color="#10B981"/>
+        </shape>
+    </item>
+
+    <!-- disabled/taken -->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp"/>
+            <solid android:color="#9CA3AF"/>
+        </shape>
+    </item>
+
+    <!-- VIP default: viền cam -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp"/>
+            <solid android:color="#FFFFFF"/>
+            <stroke android:width="2dp" android:color="#F59E0B"/>
+        </shape>
+    </item>
+</selector>

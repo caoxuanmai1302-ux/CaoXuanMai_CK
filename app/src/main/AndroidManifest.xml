@@ -1,0 +1,29 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.caoxuanmai_ck">
+
+    <application
+        android:label="CinemaBooking"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/Theme.Cinema">
+
+        <!-- LAUNCHER activity: phải exported=true -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Các activity còn lại không có intent-filter => không cần exported -->
+        <activity android:name=".SeatActivity" />
+        <activity android:name=".MovieDetailActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".AdminActivity" />
+        <activity android:name=".TicketsActivity" />
+
+    </application>
+</manifest>

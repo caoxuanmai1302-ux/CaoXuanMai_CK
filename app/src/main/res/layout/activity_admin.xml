@@ -1,0 +1,30 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:text="Thêm phim" android:textStyle="bold" android:textSize="18sp"/>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/edtTitle" android:hint="Tiêu đề"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout><com.google.android.material.textfield.TextInputEditText android:id="@+id/edtGenre" android:hint="Thể loại"/></com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout><com.google.android.material.textfield.TextInputEditText android:id="@+id/edtDuration" android:hint="Thời lượng (phút)" android:inputType="number"/></com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout><com.google.android.material.textfield.TextInputEditText android:id="@+id/edtDesc" android:hint="Mô tả"/></com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout><com.google.android.material.textfield.TextInputEditText android:id="@+id/edtPoster" android:hint="Poster URL"/></com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout><com.google.android.material.textfield.TextInputEditText android:id="@+id/edtAge" android:hint="Độ tuổi" android:inputType="number"/></com.google.android.material.textfield.TextInputLayout>
+        <Button android:id="@+id/btnAddMovie" android:text="Thêm phim" android:background="@drawable/bg_btn_primary" android:textColor="@color/colorOnPrimary"/>
+
+
+        <TextView android:text="Thêm suất" android:textStyle="bold" android:textSize="18sp" android:layout_marginTop="12dp"/>
+        <com.google.android.material.textfield.TextInputLayout><com.google.android.material.textfield.TextInputEditText android:id="@+id/edtMvId" android:hint="MovieId" android:inputType="number"/></com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout><com.google.android.material.textfield.TextInputEditText android:id="@+id/edtAudId" android:hint="AuditoriumId" android:inputType="number"/></com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@+id/btnPickDate" android:text="Chọn ngày" style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            <Button android:id="@+id/btnPickTime" android:text="Chọn giờ" style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout><com.google.android.material.textfield.TextInputEditText android:id="@+id/edtStartAt" android:hint="StartAt (ISO)"/></com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout><com.google.android.material.textfield.TextInputEditText android:id="@+id/edtPrice" android:hint="Giá" android:inputType="number"/></com.google.android.material.textfield.TextInputLayout>
+        <Button android:id="@+id/btnAddShow" android:text="Thêm suất" android:background="@drawable/bg_btn_primary" android:textColor="@color/colorOnPrimary"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@+id/btnLock" android:text="Khóa suất" style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            <Button android:id="@+id/btnUnlock" android:text="Mở khóa" style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

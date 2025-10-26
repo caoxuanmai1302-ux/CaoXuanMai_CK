@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorOnSecondary">#00343C</color>
+    <color name="colorBackground">#FAFAFD</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#1A2233</color>
+    <color name="colorSubtleText">#5E6B85</color>
+    <color name="colorOutline">#E5E8F0</color>
+    <!-- States -->
+    <color name="colorSuccess">#16A34A</color>
+    <color name="colorWarning">#F59E0B</color>
+    <color name="colorError">#EF4444</color>
+
+    <!-- Seat map (light) -->
+    <color name="seat_available">#FFFFFF</color>
+    <color name="seat_taken">#CBD5E1</color>          <!-- slate-300 -->
+    <color name="seat_selected">#4F46E5</color>       <!-- primary -->
+    <color name="seat_text">#1A2233</color>
+    <color name="seat_vip_border">#F59E0B</color>     <!-- amber-500 -->
+    <color name="colorPrimary">#4F46E5</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#22C55E</color>
+    <color name="colorSeatVip">#F59E0B</color>
+    <color name="colorSeatPicked">#10B981</color>
+    <color name="colorSeatTaken">#9CA3AF</color>
+    <color name="colorCardBg">#FFFFFF</color>
+    <color name="colorBg">#F8FAFC</color>
+</resources>

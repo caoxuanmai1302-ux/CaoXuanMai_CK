@@ -1,0 +1,24 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- picked -->
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="12dp"/>
+            <solid android:color="@color/colorSeatPicked"/>
+        </shape>
+    </item>
+    <!-- taken/disabled -->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="12dp"/>
+            <solid android:color="@color/colorSeatTaken"/>
+        </shape>
+    </item>
+    <!-- default (VIP border) -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="12dp"/>
+            <stroke android:width="2dp" android:color="@color/colorSeatVip"/>
+            <solid android:color="#FFFFFF"/>
+        </shape>
+    </item>
+</selector>

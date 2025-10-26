@@ -1,0 +1,1 @@
+package com.example.caoxuanmai_ck.data; public class BookingCreated { public long id; public double totalPrice; public String status; public String error; }

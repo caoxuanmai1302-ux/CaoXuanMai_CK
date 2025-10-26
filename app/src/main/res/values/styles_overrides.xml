@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <!-- Style placeholder đa dụng: nếu layout gán style="@style/Shape"
+             thì áp dụng bo góc + nền trắng nhẹ. Dùng được cho nhiều View/Card. -->
+        <style name="Shape">
+            <!-- Bo góc cho view dùng MaterialShapeDrawable (Material3) -->
+            <item name="shapeAppearanceSmallComponent">@style/Shape.Rounded8</item>
+            <item name="shapeAppearanceMediumComponent">@style/Shape.Rounded8</item>
+            <item name="shapeAppearanceLargeComponent">@style/Shape.Rounded8</item>
+            <!-- fallback cho view thường -->
+            <item name="android:background">@drawable/bg_shape_round_8</item>
+        </style>
+
+        <!-- Text appearance mặc định cho app -->
+        <style name="Text.Cinema" parent="TextAppearance.Material3.BodyMedium">
+            <item name="android:textColor">#222222</item>
+            <item name="android:fontFamily">sans-serif</item>
+            <item name="fontFamily">sans-serif</item>
+            <item name="android:textSize">14sp</item>
+            <item name="lineHeight">18sp</item>
+        </style>
+
+        <!-- ShapeAppearance bo góc 8dp dùng ở trên -->
+        <style name="Shape.Rounded8" parent="ShapeAppearance.Material3.MediumComponent">
+            <item name="cornerFamily">rounded</item>
+            <item name="cornerSize">8dp</item>
+        </style>
+
+</resources>

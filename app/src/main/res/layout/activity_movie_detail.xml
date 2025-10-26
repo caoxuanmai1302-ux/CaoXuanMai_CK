@@ -1,0 +1,10 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/colorBg">
+    <LinearLayout android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@+id/imgPoster" android:layout_width="match_parent" android:layout_height="220dp" android:scaleType="centerCrop"/>
+        <TextView android:id="@+id/tvTitle" android:textStyle="bold" android:textSize="22sp" android:layout_marginTop="12dp"/>
+        <TextView android:id="@+id/tvDesc" android:layout_marginTop="6dp"/>
+        <TextView android:text="Suất chiếu" android:textStyle="bold" android:layout_marginTop="12dp"/>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvShowtimes" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>
