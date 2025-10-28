@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/seatItem"
-    android:layout_width="0dp"
-    android:layout_height="48dp"
-    android:layout_margin="4dp">
+    android:layout_width="0dp" android:layout_height="50dp" android:layout_margin="5dp">
+
 
     <TextView
         android:id="@+id/txtCode"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="A1"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        android:textColor="#222222"
-        android:background="@drawable/bg_seat_state_normal" />
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:gravity="center" android:textStyle="bold" android:textSize="15sp"
+        android:textColor="@color/md_theme_onSurface"
+        android:background="@drawable/bg_seat_state_normal"/>
 </FrameLayout>

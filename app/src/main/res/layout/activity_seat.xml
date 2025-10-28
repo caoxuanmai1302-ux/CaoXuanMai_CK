@@ -1,26 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/md_theme_background">
 
-    <TextView
-        android:id="@+id/tvTotal"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvSeats"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+    <LinearLayout
+        android:orientation="vertical" android:padding="16dp"
+        android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <Button
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textStyle="bold" android:textSize="18sp"
+            android:textColor="@color/md_theme_onSurface"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginTop="8dp">
+
+
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="VIP viền cam" android:textColor="@color/md_muted"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="Đã bán xám" android:textColor="@color/md_muted" android:gravity="end"/>
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSeats"
+            android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1" android:paddingTop="8dp"/>
+    </LinearLayout>
+
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnBook"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
         android:text="Đặt &amp; Thanh toán"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        android:layout_margin="16dp"
+        style="@style/Widget.Material3.Button"
+        android:textColor="@color/md_theme_onPrimary"
+        android:background="@drawable/bg_btn_primary"
+        />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

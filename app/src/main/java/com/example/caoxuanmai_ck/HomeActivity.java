@@ -2,6 +2,7 @@ package com.example.caoxuanmai_ck;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,22 +34,37 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(b);
         setContentView(R.layout.activity_home);
 
-        // Ánh xạ view (không có btnProfile)
+        // Nếu chưa có token -> quay lại màn đăng nhập (tránh vào Home rỗng gây crash)
+        String token = Session.token(this);
+        if (token == null || token.isEmpty()) {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+            return;
+        }
+
+        // Ánh xạ view
         tvHello    = findViewById(R.id.tvHello);
         rvMovies   = findViewById(R.id.rvMovies);
         btnTickets = findViewById(R.id.btnTickets);
         btnAdmin   = findViewById(R.id.btnAdmin);
         btnLogout  = findViewById(R.id.btnLogout);
 
-        // Chào tên (hoặc Khách)
+        // Nếu layout thiếu ID nào đó -> thoát an toàn để tránh NPE
+        if (tvHello == null || rvMovies == null || btnTickets == null || btnAdmin == null || btnLogout == null) {
+            Toast.makeText(this, "activity_home.xml thiếu ID. Dán đúng file layout mình gửi.", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
+
+        // Chào tên
         String name = Session.name(this);
         tvHello.setText(name != null && !name.isEmpty() ? "Xin chào, " + name : "Xin chào");
 
-        // Ẩn nút Admin nếu không phải ADMIN
+        // Ẩn/hiện Admin theo role
         String role = Session.role(this);
-        btnAdmin.setVisibility("ADMIN".equals(role) ? android.view.View.VISIBLE : android.view.View.GONE);
+        btnAdmin.setVisibility("ADMIN".equals(role) ? View.VISIBLE : View.GONE);
 
-        // RecyclerView
+        // RecyclerView phim
         rvMovies.setLayoutManager(new GridLayoutManager(this, 2));
         adapter = new MoviesAdapter(new ArrayList<>(), m -> {
             Intent i = new Intent(HomeActivity.this, MovieDetailActivity.class);
@@ -57,7 +73,7 @@ public class HomeActivity extends AppCompatActivity {
         });
         rvMovies.setAdapter(adapter);
 
-        // Nút Tickets: nếu bạn đã có TicketsActivity thì mở, còn chưa có thì hiện toast
+        // Nút Vé của tôi
         btnTickets.setOnClickListener(v -> {
             try {
                 startActivity(new Intent(HomeActivity.this, TicketsActivity.class));
@@ -66,15 +82,20 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        // Nút Admin
         btnAdmin.setOnClickListener(v ->
                 startActivity(new Intent(HomeActivity.this, AdminActivity.class)));
 
+        // Nút Đăng xuất
         btnLogout.setOnClickListener(v -> {
             Session.clear(HomeActivity.this);
-            startActivity(new Intent(HomeActivity.this, MainActivity.class));
+            Intent i = new Intent(HomeActivity.this, MainActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(i);
             finish();
         });
 
+        // Tải danh sách phim
         loadMovies();
     }
 

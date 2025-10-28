@@ -1,23 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_background">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:title="Danh sách phim"
-        app:layout_scrollFlags="scroll|enterAlways" />
+        android:layout_height="?attr/actionBarSize"
+        android:backgroundTint="@color/md_theme_primary"
+        android:title="Movies Section"
+        android:titleTextColor="@color/md_theme_onPrimary"
+        app:navigationIcon="@drawable/abc_ic_ab_back_material"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMovies"
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingTop="?attr/actionBarSize"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="12dp"
-        android:clipToPadding="false"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/tvHint"
+            android:text="Click a movie to remove it from the list"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="16dp"
+            android:textColor="@color/md_theme_onSurface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMovies"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="12dp"
+            android:clipToPadding="false"/>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_anchorGravity="bottom|end"
+        app:backgroundTint="@color/md_theme_primary"
+        app:tint="@color/md_theme_onPrimary"
+        app:srcCompat="@android:drawable/ic_input_add"
+        app:layout_anchor="@id/rvMovies"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,62 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@color/colorBg">
+    android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/md_theme_background">
 
-    <!-- Header row -->
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:backgroundTint="@color/md_theme_surface"
+        android:title="Ticketify"
+        android:titleTextColor="@color/md_theme_onSurface" />
+
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:padding="16dp" android:gravity="center_vertical" android:background="@color/md_theme_surface">
 
-        <!-- Đẩy cụm nút sang phải bằng weight -->
+
         <TextView
             android:id="@+id/tvHello"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="20sp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:textStyle="bold" android:textSize="20sp"
+            android:textColor="@color/md_theme_onSurface" />
 
 
-            <Button
-                android:id="@+id/btnTickets"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tickets" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTickets" style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Vé" />
 
-            <Button
-                android:id="@+id/btnAdmin"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/admin" />
 
-            <Button
-                android:id="@+id/btnLogout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/bg_btn_primary"
-                android:textColor="@color/colorOnPrimary"
-                android:text="@string/logout" />
-        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdmin" style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginStart="8dp" android:text="Admin" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogout" style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginStart="8dp" android:text="Đăng xuất" />
     </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMovies"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:paddingTop="12dp" />
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:padding="10dp"/>
 </LinearLayout>

@@ -1,27 +1,38 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.CaoXuanMai_CK" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Cinema" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
+        <item name="colorSecondary">@color/md_theme_secondary</item>
+
+
+        <item name="android:windowBackground">@color/md_theme_background</item>
+        <item name="android:statusBarColor">@color/md_theme_surface</item>
+        <item name="android:navigationBarColor">@color/md_theme_surface</item>
+
+
+        <item name="android:colorBackground">@color/md_theme_background</item>
+        <item name="colorSurface">@color/md_theme_surface</item>
+        <item name="colorOnSurface">@color/md_theme_onSurface</item>
+
+
+        <!-- Rounded Ticketify -->
+        <item name="shapeAppearanceSmallComponent">@style/Shape.Radius12</item>
+        <item name="shapeAppearanceMediumComponent">@style/Shape.Radius16</item>
+        <item name="shapeAppearanceLargeComponent">@style/Shape.Radius24</item>
     </style>
 
-    <style name="Theme.CaoXuanMai_CK" parent="Base.Theme.CaoXuanMai_CK" />
 
-    <style name="Shape.Rounded12">
+    <style name="Shape.Radius12">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">12dp</item>
     </style>
-    <style name="Shape.Rounded16">
+    <style name="Shape.Radius16">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">16dp</item>
     </style>
-    <style name="Shape.Rounded20">
+    <style name="Shape.Radius24">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">20dp</item>
-    </style>
-    <style name="Theme.Cinema" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorOnPrimary">@color/colorOnPrimary</item>
-        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="cornerSize">24dp</item>
     </style>
 </resources>
